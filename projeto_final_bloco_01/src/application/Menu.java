@@ -1,7 +1,6 @@
 package application;
 
 import application.controller.CadastroController;
-import application.model.Cadastro;
 import application.model.CadastroCliente;
 import application.model.CadastroProfissional;
 import application.util.Colors;
@@ -18,19 +17,6 @@ public class Menu {
         String nome, endereco, telefone, crp;
 
         Scanner ler = new Scanner(System.in);
-
-        CadastroCliente cc1 = new CadastroCliente("ThichiCliente1", "(11)91222-1111", "Rua Jacaré", 1, 1);
-        cadastro.cadastrar(cc1);
-        CadastroCliente cc2 = new CadastroCliente("ThichiCliente2", "(11)93333-1111", "Rua Jacaré", 2, 1);
-        cadastro.cadastrar(cc2);
-        CadastroProfissional cp1 = new CadastroProfissional("ThichiProfissional1", "(11)93333-1111", "Rua Jacaré", 2, 1,
-                "23354345445");
-        cadastro.cadastrar(cp1);
-        CadastroProfissional cp2 = new CadastroProfissional("ThichiProfissional2", "(11)93333-1111", "Rua Jacaré", 2, 1,
-                "23354345445");
-        cadastro.cadastrar(cp2);
-
-        cadastro.listarProfissionais();
 
         try {
             opcao = ler.nextInt();
@@ -91,11 +77,15 @@ public class Menu {
                     switch (tipo) {
                         case 1:
                             cadastro.cadastrar(new CadastroCliente(nome, telefone, endereco, cadastro.gerarNumero(), tipo));
+                            keyPress();
+                            break;
 
                         case 2:
                             System.out.println("\nDigite o seu número de Cadastro Regional de Psicologia: ");
                             crp = ler.nextLine();
                             cadastro.cadastrar(new CadastroProfissional(nome, telefone, endereco, cadastro.gerarNumero(), tipo, crp));
+                            keyPress();
+                            break;
                         default:
                             System.out.println("\nTipo de Cadastro Inválido.");
                             keyPress();
@@ -129,10 +119,14 @@ public class Menu {
                         switch (tipo) {
                             case 1:
                                 cadastro.atualizar(new CadastroCliente(nome, telefone, endereco, numero, tipo));
+                                keyPress();
+                                break;
                             case 2:
                                 System.out.println("\nDigite o seu número de Cadastro Regional de Psicologia: ");
                                 crp = ler.nextLine();
                                 cadastro.atualizar(new CadastroProfissional(nome, telefone, endereco, numero, tipo, crp));
+                                keyPress();
+                                break;
                             default:
                                 System.out.println("\nTipo de Cadastro Inválido.");
                                 keyPress();
