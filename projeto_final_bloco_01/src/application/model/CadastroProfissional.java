@@ -3,7 +3,7 @@ package application.model;
 public class CadastroProfissional extends Cadastro{
     private String crp;
 
-    public CadastroProfissional(String nome, String telefone, String endereco, int numero, int tipo) {
+    public CadastroProfissional(String nome, String telefone, String endereco, int numero, int tipo, String crp) {
         super(nome, telefone, endereco, numero, tipo);
         this.crp = crp;
     }

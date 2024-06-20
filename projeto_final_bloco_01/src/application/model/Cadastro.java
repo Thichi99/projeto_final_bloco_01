@@ -1,6 +1,6 @@
 package application.model;
 
-public class Cadastro {
+public  abstract class Cadastro {
     private String nome, telefone, endereco;
     private int numero, tipo;
 
