@@ -8,7 +8,7 @@ public interface CadastroRepository {
 
     void atualizar (Cadastro cadastro);
 
-    void listarProfissionais();
+    void listarCadastros();
 
     void procurarPorCod(int numero);
 

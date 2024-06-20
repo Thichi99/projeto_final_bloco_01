@@ -1,6 +1,7 @@
 package application.controller;
 
 import application.model.Cadastro;
+import application.model.CadastroProfissional;
 import application.repository.CadastroRepository;
 
 import java.util.ArrayList;
@@ -30,11 +31,9 @@ public class CadastroController implements CadastroRepository {
     }
 
     @Override
-    public void listarProfissionais() {
+    public void listarCadastros() {
         for (var cadastro : listaCadastros) {
-            if (cadastro.getTipo() == 2){
                 cadastro.visualizar();
-                }
         }
     }
 

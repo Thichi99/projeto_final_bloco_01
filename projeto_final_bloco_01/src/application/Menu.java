@@ -1,7 +1,6 @@
 package application;
 
 import application.controller.CadastroController;
-import application.model.Cadastro;
 import application.model.CadastroCliente;
 import application.model.CadastroProfissional;
 import application.util.Colors;
@@ -23,14 +22,14 @@ public class Menu {
         cadastro.cadastrar(cc1);
         CadastroCliente cc2 = new CadastroCliente("ThichiCliente2", "(11)93333-1111", "Rua Jacaré", 2, 1);
         cadastro.cadastrar(cc2);
-        CadastroProfissional cp1 = new CadastroProfissional("ThichiProfissional1", "(11)93333-1111", "Rua Jacaré", 2, 1,
+        CadastroProfissional cp1 = new CadastroProfissional("ThichiProfissional1", "(11)93333-1111", "Rua Jacaré", 3, 1,
                 "23354345445");
         cadastro.cadastrar(cp1);
-        CadastroProfissional cp2 = new CadastroProfissional("ThichiProfissional2", "(11)93333-1111", "Rua Jacaré", 2, 1,
+        CadastroProfissional cp2 = new CadastroProfissional("ThichiProfissional2", "(11)93333-1111", "Rua Jacaré", 4, 1,
                 "23354345445");
         cadastro.cadastrar(cp2);
 
-        cadastro.listarProfissionais();
+        cadastro.listarCadastros();
 
         try {
             opcao = ler.nextInt();
@@ -51,8 +50,8 @@ public class Menu {
             System.out.println("                                                                     ");
             System.out.println("\n\t\t\t1 - Criar Cadastro                                           ");
             System.out.println("\n\t\t\t2 - Atualizar dados da Conta                                 ");
-            System.out.println("\n\t\t\t3 - Listar Profissionais                                     ");
-            System.out.println("\n\t\t\t4 - Buscar Profissional por Código                           ");
+            System.out.println("\n\t\t\t3 - Listar Cadastros                                     ");
+            System.out.println("\n\t\t\t4 - Buscar Cadastros por Código                           ");
             System.out.println("\n\t\t\t5 - Apagar Cadastro                                          ");
             System.out.println("\n\t\t\t6 - Sair                                                     ");
             System.out.println("                                                                     ");
@@ -96,10 +95,6 @@ public class Menu {
                             System.out.println("\nDigite o seu número de Cadastro Regional de Psicologia: ");
                             crp = ler.nextLine();
                             cadastro.cadastrar(new CadastroProfissional(nome, telefone, endereco, cadastro.gerarNumero(), tipo, crp));
-                        default:
-                            System.out.println("\nTipo de Cadastro Inválido.");
-                            keyPress();
-                            break;
                     }
 
                     keyPress();
@@ -145,12 +140,12 @@ public class Menu {
                     keyPress();
                     break;
                 case 3:
-                    System.out.println(Colors.TEXT_WHITE_BOLD + "Listar Profissionais\n");
-                    cadastro.listarProfissionais();
+                    System.out.println(Colors.TEXT_WHITE_BOLD + "Listar Cadastros\n");
+                    cadastro.listarCadastros();
                     keyPress();
                     break;
                 case 4:
-                    System.out.println(Colors.TEXT_WHITE_BOLD + "Buscar Profissional por Código\n");
+                    System.out.println(Colors.TEXT_WHITE_BOLD + "Buscar Cadastro por Código\n");
 
                     System.out.println("\nDigite o número do Cadastro:");
                     numero = ler.nextInt();
