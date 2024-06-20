@@ -1,5 +1,6 @@
 package application;
 
+import application.model.Cadastro;
 import application.util.Colors;
 
 import java.io.IOException;
@@ -11,6 +12,12 @@ public class Menu {
         int opcao;
 
         Scanner ler = new Scanner(System.in);
+
+        Cadastro c1 = new Cadastro("Thichi", "12321", "Rua thichi", 25, 1);
+        c1.visualizar();
+        Cadastro p1 = new Cadastro("ThichiFeliz", "54312", "Rua thichiFeliz", 27, 2);
+        p1.visualizar();
+
 
         try {
             opcao = ler.nextInt();
@@ -34,7 +41,8 @@ public class Menu {
             System.out.println("\n\t\t\t3 - Listar Profissionais                                     ");
             System.out.println("\n\t\t\t4 - Buscar Profissional por Código                           ");
             System.out.println("\n\t\t\t5 - Adicionar Profissionais                                  ");
-            System.out.println("\n\t\t\t6 - Sair                                                     ");
+            System.out.println("\n\t\t\t6 - Apagar Cadastro                                          ");
+            System.out.println("\n\t\t\t7 - Sair                                                     ");
             System.out.println("                                                                     ");
             System.out.println("---------------------------------------------------------------------");
             System.out.println("Entre com a opção desejada: ");
@@ -42,7 +50,7 @@ public class Menu {
 
             opcao = ler.nextInt();
 
-            if (opcao == 6) {
+            if (opcao == 7) {
                 System.out.println("\nTerapia Online - Cuide de sua mente onde quer que esteja!");
                 System.out.println("\nObrigado pela Consulta!");
                 sobre();
@@ -69,6 +77,10 @@ public class Menu {
                     break;
                 case 5:
                     System.out.println(Colors.TEXT_WHITE_BOLD + "Adicionar Profissionais\n");
+                    keyPress();
+                    break;
+                case 6:
+                    System.out.println(Colors.TEXT_WHITE_BOLD + "Apagar Cadastro\n");
                     keyPress();
                     break;
                 default:
